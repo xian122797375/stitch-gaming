@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=PingFang+SC&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "PingFang SC", system-ui, sans-serif;
+  
+  --color-brand: #3A7CFF;
+  --color-surface: #faf8ff;
+  --color-surface-container: #f2f3fe;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-gray-800 font-sans antialiased;
+  }
+}
+
+/* Hide scrollbar for horizontal scrolling elements */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
