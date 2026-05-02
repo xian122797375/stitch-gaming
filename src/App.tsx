@@ -45,8 +45,8 @@ export default function App() {
 
             <section className="pb-4">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-bold text-gray-900">推荐商品</h2>
-                <button className="text-xs text-brand font-medium">查看更多</button>
+                <h2 className="text-[19px] font-black text-gray-900 tracking-tight flex items-center">推荐商品</h2>
+                <button className="text-xs text-brand font-bold bg-brand/10 px-2 py-1 rounded">查看更多</button>
               </div>
               
               <div className="grid grid-cols-2 gap-3">
