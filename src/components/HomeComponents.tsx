@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Gamepad, Flame, HandCoins, Headset, ClipboardList, HelpCircle, ShieldCheck, Zap, Gift } from 'lucide-react';
+import { Search, Gamepad, Flame, HandCoins, Headset, ClipboardList, HelpCircle, ShieldCheck, Zap, Gift, Heart } from 'lucide-react';
 import { motion } from 'motion/react';
 import { GameCategory, GameIcon, AccountListing } from '../types';
 
@@ -25,9 +25,10 @@ const iconMap: Record<string, any> = {
   'headset': Headset,
   'clipboard-list': ClipboardList,
   'question-circle': HelpCircle,
+  'heart': Heart,
 };
 
-export const CategoryNav: React.FC<{ categories: GameCategory[] }> = ({ categories }) => (
+export const CategoryNav: React.FC<{ categories: GameCategory[], onCategoryClick?: (id: string) => void }> = ({ categories, onCategoryClick }) => (
   <div className="grid grid-cols-5 gap-2 mb-4 text-center">
     {categories.map((cat) => {
       const Icon = iconMap[cat.icon] || Gamepad;
@@ -35,6 +36,7 @@ export const CategoryNav: React.FC<{ categories: GameCategory[] }> = ({ categori
         <motion.div 
           key={cat.id} 
           whileTap={{ scale: 0.95 }}
+          onClick={() => onCategoryClick?.(cat.id)}
           className="flex flex-col items-center cursor-pointer group"
         >
           <div className={`w-12 h-12 rounded-[16px] bg-gradient-to-br ${cat.gradient} flex items-center justify-center text-white shadow-sm relative overflow-hidden`}>
@@ -179,17 +181,17 @@ export const PromoBanner: React.FC = () => {
   );
 };
 
-export const HotGames: React.FC<{ games: GameIcon[] }> = ({ games }) => (
+export const HotGames: React.FC<{ games: GameIcon[], onGameClick?: (id: string) => void }> = ({ games, onGameClick }) => (
   <section className="mb-4">
     <h2 className="text-[19px] font-black mb-4 text-gray-900 flex items-center">
       热门游戏 
     </h2>
-    <div className="overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2 -mx-4 px-4 w-full">
-      <div className="flex w-max space-x-3 pr-4">
+    <div className="overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2 -mx-4 px-4 flex space-x-3 after:content-[''] after:w-1 after:flex-shrink-0">
         {games.map((game) => (
           <motion.div 
             key={game.id} 
             whileTap={{ scale: 0.95 }}
+            onClick={() => onGameClick?.(game.id)}
             className="snap-center flex-shrink-0 relative w-[130px] aspect-[1/1] rounded-2xl overflow-hidden shadow-sm border border-gray-200/50 cursor-pointer group"
           >
             {game.image ? (
@@ -218,14 +220,14 @@ export const HotGames: React.FC<{ games: GameIcon[] }> = ({ games }) => (
             )}
           </motion.div>
         ))}
-      </div>
     </div>
   </section>
 );
 
-export const AccountCard: React.FC<{ listing: AccountListing }> = ({ listing }) => (
+export const AccountCard: React.FC<{ listing: AccountListing, onClick?: (id: string) => void }> = ({ listing, onClick }) => (
   <motion.article 
     whileHover={{ y: -4 }}
+    onClick={() => onClick?.(listing.id)}
     className="bg-white rounded-[16px] overflow-hidden flex flex-col cursor-pointer border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all active:scale-[0.98]"
   >
     <div className="relative w-full aspect-[4/3] bg-gray-50 border-b border-gray-100/50">

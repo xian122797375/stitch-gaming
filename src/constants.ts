@@ -4,7 +4,7 @@ export const CATEGORIES: GameCategory[] = [
   { id: '1', name: '全部游戏', icon: 'gamepad', gradient: 'from-blue-400 to-blue-600' },
   { id: '2', name: '热门账号', icon: 'fire', gradient: 'from-orange-400 to-red-500' },
   { id: '3', name: '我要卖号', icon: 'hand-holding-usd', gradient: 'from-yellow-400 to-orange-400' },
-  { id: '4', name: '联系客服', icon: 'headset', gradient: 'from-cyan-400 to-blue-500' },
+  { id: '4', name: '我的收藏', icon: 'heart', gradient: 'from-pink-400 to-rose-500' },
   { id: '5', name: '订单中心', icon: 'clipboard-list', gradient: 'from-teal-300 to-emerald-400' },
 ];
 
@@ -69,6 +69,7 @@ export const HOT_GAMES: GameIcon[] = [
 export const LISTINGS: AccountListing[] = [
   {
     id: 'l1',
+    gameId: 'g1',
     title: '最强王者 全皮肤典藏 限定皮185+',
     price: 1288,
     originalPrice: 2000,
@@ -80,9 +81,14 @@ export const LISTINGS: AccountListing[] = [
     rank: '最强王者',
     stats: '98英雄 247皮肤',
     badges: ['包赔'],
+    heroes: ['李白', '韩信', '不知火舞', '孙尚香', '武则天', '貂蝉', '马超'],
+    equipments: ['荣耀巨剑', '破军', '无尽战刃', '复活甲', '名刀·司命'],
+    isTop: true,
+    platformBadges: ['安卓QQ', '商家', '已实名']
   },
   {
     id: 'l2',
+    gameId: 'g7',
     title: 'AR60 8个5星满命 神里+胡桃+刻晴',
     price: 688,
     originalPrice: 1200,
@@ -94,9 +100,13 @@ export const LISTINGS: AccountListing[] = [
     rank: 'AR60',
     stats: '8英雄 15皮肤',
     badges: ['包赔'],
+    heroes: ['神里绫华 (满命)', '胡桃 (满命)', '刻晴 (满命)', '钟离', '雷电将军', '夜兰'],
+    equipments: ['雾切之回光 (满精)', '护摩之杖', '磐岩结绿', '若水'],
+    platformBadges: ['安卓QQ', '商家', '已实名']
   },
   {
     id: 'l3',
+    gameId: 'g2',
     title: '最强者段位 稀有套装56+ 炸弹人',
     price: 388,
     originalPrice: 600,
@@ -108,9 +118,13 @@ export const LISTINGS: AccountListing[] = [
     rank: '最强者',
     stats: '56皮肤',
     badges: ['包赔'],
+    equipments: ['M416-五爪金龙 (满级)', 'AKM-甜心宝贝', '粉色玛莎拉蒂', '木乃伊套装', '雪国幻梦'],
+    isNew: true,
+    platformBadges: ['安卓QQ', '商家', '可二次']
   },
   {
     id: 'l4',
+    gameId: 'g13',
     title: 'SS+段位 全忍者100+ 多限定特效',
     price: 488,
     originalPrice: 800,
@@ -122,5 +136,39 @@ export const LISTINGS: AccountListing[] = [
     rank: 'SS+',
     stats: '100英雄 78皮肤',
     badges: ['包赔'],
+    heroes: ['宇智波斑 [秽土转生]', '千手柱间', '波风水门 [秽土转生]', '佩恩 [天道]', '宇智波鼬 [须佐能乎]'],
+  },
+  {
+    id: 'l5',
+    gameId: 'cf',
+    title: '英雄武器45把 王者之影',
+    price: 380,
+    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=400&h=400',
+    gameName: '穿越火线',
+    stats: '英雄武器45把 王者之影',
+    badges: ['已实名'],
+    platformBadges: ['安卓QQ', '商家']
+  },
+  {
+    id: 'l6',
+    gameId: 'cs2',
+    title: '龙狙 | 印花集齐 全套刀具',
+    price: 980,
+    image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=400&h=400',
+    gameName: 'CS2',
+    stats: '龙狙 | 印花集齐 全套刀具',
+    badges: ['已实名'],
+    platformBadges: ['安卓QQ', '商家']
+  },
+  {
+    id: 'l7',
+    gameId: 'g8',
+    title: '黑色玫瑰 皮肤168个',
+    price: 280,
+    image: 'https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?auto=format&fit=crop&w=400&h=400',
+    gameName: '英雄联盟',
+    stats: '黑色玫瑰 皮肤168个',
+    badges: ['已实名'],
+    platformBadges: ['安卓QQ', '商家']
   }
 ];

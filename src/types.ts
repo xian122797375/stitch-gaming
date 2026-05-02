@@ -15,6 +15,7 @@ export interface GameIcon {
 
 export interface AccountListing {
   id: string;
+  gameId?: string;
   title: string;
   price: number;
   originalPrice?: number;
@@ -29,4 +30,10 @@ export interface AccountListing {
   rank?: string;
   stats?: string;
   accountsInfo?: string;
+  heroes?: string[];
+  equipments?: string[];
+  skins?: string[];
+  isTop?: boolean;
+  isNew?: boolean;
+  platformBadges?: string[];
 }
